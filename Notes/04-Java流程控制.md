@@ -1,36 +1,22 @@
 # Java流程控制
 
-[输入与输出](#输入与输出)
+- [输入与输出](#输入与输出)
+  - [输出](#输出)
+  - [输入](#输入)
+- [if判断](#if判断)
+  - [常见情形](#常见情形)
+  - [判断引用类型相等](#判断引用类型相等)
+- [switch多重选择](#switch多重选择)
+  - [switch语法结构](#switch语法结构)
+  - [switch表达式](#switch表达式)
+  - [yield](#yield)
+- [while循环](#while循环)
+- [do-while循环](#do-while循环)
 
-​		[输出](#输出)
-
-​		[输入](#输入)
-
-[if判断](#if判断)
-
-​		[常见情形](#常见情形)
-
-​		[判断引用类型相等](#判断引用类型相等)
-
-[switch多重选择](#switch多重选择)
-
-​		[switch语法结构](#switch语法结构)
-
-​		[switch表达式](#switch表达式)
-
-​		[yield](#yield)
-
-[while循环](#while循环)
-
-[do-while循环](#do-while循环)
-
-[for循环](#for循环)
-
-​		[for语法结构](#for语法结构)
-
-​		[for-each循环](#for-each循环)
-
-[break和continue](#break和continue)
+- [for循环](#for循环)
+  - [for语法结构](#for语法结构)
+  - [for-each循环](#for-each循环)
+- [break和continue](#break和continue)
 
 
 
