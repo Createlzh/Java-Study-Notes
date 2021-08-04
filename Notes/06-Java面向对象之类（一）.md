@@ -208,6 +208,61 @@ ___
 
 * 注意：子类自动获得了父类的所有`属性(field)`，**严禁定义与父类重名的属性**
 
+  > 在继承中，子类可以重写父类的方法，但是父类的属性只会被隐藏，不会被重写
+  >
+  > ```java
+  > public class test {
+  >     public static void main(String[] args) {
+  >         Low f = new Low();
+  >         f.test();
+  >         System.out.println(f.f2);
+  >         f.test1();
+  >         f.setf2("ffff2!");
+  >         f.test();
+  >         f.test1();
+  >         f.test3();
+  >     }
+  > }
+  > 
+  > class Up {
+  >     private String f1="F1!";
+  >     protected String f2="F2!";
+  >     public void test() {
+  >         System.out.println(f1+f2+this.f1+this.f2);
+  >     }
+  > 
+  >     public void test3() {
+  >         System.out.println(f1+f2+this.f1+this.f2);
+  >     }
+  > }
+  > 
+  > class Low extends Up{
+  >     private String f1="f1!";
+  >     protected String f2="f2!";
+  >     public void test1() {
+  >         System.out.println(f1+f2+this.f1+this.f2);
+  >     }
+  >     public void setf2(String f2) {
+  >         this.f2 = f2;
+  >     }
+  >     public void test3() {
+  >         System.out.println(f1+f2+this.f1+this.f2);
+  >     }
+  > }
+  > 
+  > /*
+  > F1!F2!F1!F2!        f.test()
+  > f2!                 System.out.println(f.f2);
+  > f1!f2!f1!f2!        f.test1()
+  > F1!F2!F1!F2!        f.test()
+  > f1!ffff2!f1!ffff2!  f.test1()
+  > f1!ffff2!f1!ffff2!  f.test3()
+  > /*
+  > 
+  > ```
+  >
+  > 对一个子类实例，调用父类方法`test()`打印的还是父类的属性值`"F1!"`，调用子类方法`test1()`打印的是子类属性值`"f1!"`，而直接`System.out.println(f1)`调用子类属性本身得到的是子类属性值`"f1!"`，调用子类覆写的父类方法`test3()`打印的是子类属性值`"f1!"`。
+
 * 在OOP的术语中，我们把`Person`称为`超类(super class)`，`父类(parent class)`，`基类(base class)`，把`Student`称为`子类(subclass)`，`扩展类(extended class)`
 
 ##### 继承树
